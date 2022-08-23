@@ -1,0 +1,6 @@
+menu.menu_configure:
+  title: 'Configure Timezone'
+  description: 'Configure Timezone'
+  parent: system.admin_config_development
+  url: internal:/admin/config/custom/adminsettings
+  weight: 100

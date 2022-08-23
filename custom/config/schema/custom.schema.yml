@@ -1,0 +1,7 @@
+field.field_settings.country:
+  type: mapping
+  label: 'FIELDNAME settings'
+  mapping:
+    size:
+      type: string
+      label: 'Size'

@@ -1,0 +1,9 @@
+menu.menu_configure:  
+  path: '/admin/config/custom/adminsettings'  
+  defaults:  
+    _form: '\Drupal\custom\Form\MessagesForm'  
+    _title: 'MessagesForm'  
+  requirements:  
+    _permission: 'access administration pages'  
+  options:  
+    _admin_route: TRUE   

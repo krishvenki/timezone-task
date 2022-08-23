@@ -1,0 +1,4 @@
+services:
+  custom.service_example:
+    class: Drupal\custom\CustomExample
+    arguments: ['@config.factory']

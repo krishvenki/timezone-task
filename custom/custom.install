@@ -1,0 +1,45 @@
+<?php
+function custom_schema(){
+    $schema['country_list'] = array(
+        'description' => 'The table for storing the country data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for country list.',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'country' => array(
+                'description' => 'country name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'city' => array(
+                'description' => 'city name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'created_date' => array(
+                'description' => 'Create date time(yyyy-mm-dd H:i:s).',
+                'type' => 'varchar',
+                'mysql_type' => 'DATETIME',
+                'not null' => TRUE,
+				'default' => date('Y-m-d H:i:s'),
+            ),
+			'timezone' => array(
+                'description' => 'Time Zone name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}
+?>

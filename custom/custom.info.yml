@@ -1,0 +1,7 @@
+name: Custom
+type: module
+description: 'Custom module creation.'
+package: Custom Package
+core_version_requirement: ^8 || ^9
+dependencies: 
+        - block

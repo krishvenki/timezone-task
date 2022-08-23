@@ -1,0 +1,27 @@
+{# custom/templates/customtemplate.html.twig #}
+<p>Test twig template!</p>
+<select name="country" id="country" data-width="100%">
+    {% for key,val in country %}
+        <option value="{{ key}}">{{ val }}</option>
+    {% endfor %}
+</select>
+<script>
+jQuery(document).ready(function(){
+
+jQuery('#country').change(function() {
+    var url = $(this).attr('base-url') + $(this).val();
+
+    changeUserStatus(url);
+});
+
+function changeUserStatus(url) {
+    jQuery.ajax({
+        type: 'PUT',
+        url: url,
+        success: function () {
+            console.log('success');
+        }
+    });
+}
+})
+</script>

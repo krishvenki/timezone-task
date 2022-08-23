@@ -1,0 +1,40 @@
+<?php
+use Drupal\Core\Block\BlockBase;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\field\Entity\FieldConfig;
+
+function Custom_theme($existing, $type, $theme, $path) {
+$theme = [
+    'customtemplate' => [
+      'variables' => [
+        'country' => [],
+      ],
+      'template' => 'customtemplate',
+    ],
+  ];
+  return $theme;
+
+}
+
+function Custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) 
+{
+//echo "%%%".$form_id;exit;
+		if($form_id=='get_custom_form')
+		{
+		unset($form['actions']['submit']);
+		  // add ajax to select 1
+			/*$form['City']['widget']['#ajax'] = [
+			  'callback' => '::myAjaxCityCallback',
+			'disable-refocus' => FALSE,
+			'event' => 'change',
+			'wrapper' => 'edit-outputtimezone',
+			'progress' => [
+			  'type' => 'throbber',
+			  'message' => 'Verifying entry...',
+			],
+			];
+*/
+		}
+}
